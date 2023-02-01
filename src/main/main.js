@@ -25,6 +25,21 @@ const cube =new THREE.Mesh(cubeGeometry,cubeMaterial)
 
 cube.position.x=0
 cube.scale.x=1
+
+
+
+// 创建不规则三角形
+for(let i=0;i<50;i++){
+    const geometry=new THREE.BufferGeometry()
+    const positionArray=new Float32Array()
+    for(let j=0;j<9;j++){
+        positionArray[j]=Math.random()*5;
+    }
+    geometry.setAttribute('position',new THREE.BufferAttribute(vertices,3))
+    const material= new THREE.MeshBasicMaterial({color:0xffff00})
+   const Mesh =new THREE.Mesh(geometry,material)
+
+}
 // cube.rotation.set(Math.PI/4,0,0)
 //将几何体添加到场景
 scene.add(cube)
